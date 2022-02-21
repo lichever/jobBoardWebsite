@@ -25,14 +25,17 @@ const SingleJob = (props) => {
 
       <div className="section2">
         {keywords.map((key, id) => (
-          <div className='keywords-section'>
-            <span className='category'>category: &nbsp; </span>
-            <button onClick={() => props.setKeywords(key)} key={id}>{key}</button>
-          </div>
+          <ul className='section2-map' key={id}>
+            <li >
+              <span className='category'>category: &nbsp; </span>
+              <span className='button' >{key} </span>
+            </li>
+
+          </ul>
+
 
         ))}
       </div>
-
 
     </div>
   );

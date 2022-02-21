@@ -1,32 +1,16 @@
 import data from "./data.json"
 import Jobs from "./components/Jobs";
-import Header from "./components/Header";
 import Search from "./components/Search";
 import { useState } from "react";
 
 function App() {
 
-//extension: add more key words in the filterKeywords array
-const [filterKeywords, setfilterKeywords] = useState([]);
-const [useSearch, setSearch] = useState(0);
+  //extension: add more key words in the filterKeywords array
+  const [filterKeywords, setfilterKeywords] = useState([]);
 
-  const setSearchKeyword = (data) => {
-    setfilterKeywords(data);
+  const setSearchKeyword = (searchWord) => {
+    setfilterKeywords(searchWord);
   };
-
-
-const addFilterKeywords = (data) => {
-  if (!filterKeywords.includes(data)) {
-    setfilterKeywords([...filterKeywords, data]);
-  }
-};
-
-const deleteKeyword = (data) => {
-  const rest = filterKeywords.filter((key) => key !== data);
-  setfilterKeywords(rest);
-};
-
-
 
   return (
     <div>
@@ -34,18 +18,9 @@ const deleteKeyword = (data) => {
 
       <Search setSearchKeyword={setSearchKeyword} />
 
-      {filterKeywords.length > 0 && (
-        <Header
-          keywords={filterKeywords}
-          removeKeywords={deleteKeyword}
-        />
-      )}
-
-      <Jobs 
-      data = {data} 
-      setKeywords={addFilterKeywords}
-      keywords={filterKeywords}
-
+      <Jobs
+        data={data}
+        keywords={filterKeywords}
       />
     </div>
   );

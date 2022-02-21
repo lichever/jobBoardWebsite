@@ -10,7 +10,7 @@
 
     box-shadow: 0px 4px 6px 4px rgba(91, 164, 164, 0.15);
 
-    @media (max-width: 576px) {
+    @media (max-width: 880px) {
         flex-direction: column;
         align-items: flex-start;
         width: 80vw;
@@ -27,7 +27,7 @@
 
         .jobid {
             color: #fff;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             background-color: var(--dark-greyish);
             border-radius: 1rem;
             padding: 0.25rem;
@@ -38,6 +38,7 @@
         .position {
             margin-top: 0.5rem;
             font-weight: 700;
+            font-size: 1.3rem;
             color: var(--primary-color);
         }
 
@@ -53,33 +54,39 @@
         flex-wrap: wrap;
         justify-content: space-between;
 
+        .section2-map{
+            list-style: none;
+        }
 
         .category {
             color: var(--very-dark-greyish);
             font-weight: 700;
+            font-size: 1.2rem;
         }
 
-        button {
+        .button {
 
-            &:hover {
-                background-color: var(--primary-color);
-                color: #fff;
-            }
+            background-color: var(--primary-color);
+            color: #fff;
 
-            @media (max-width: 375px) {
+            @media (max-width: 880px) {
                 margin-bottom: 1rem;
+                padding: 0.2rem;
+
             }
 
-            background-color: var(--background-color);
-            color: var(--primary-color);
             font-weight: 700;
             padding: 0.5rem;
             border-radius: 5px;
             border-color: var(--primary-color);
-            cursor: pointer;
         }
 
+        @media (max-width: 880px) {
+            margin-top: 0.5rem;
+            padding: 0.2rem;
+            font-size: 0.8rem;
 
+        }
     }
 
 }
